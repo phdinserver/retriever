@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "PhD in Server TCP backend",
   "main": "index.mjs",
-  "scripts": {
-
-  },
+  "scripts": {},
   "keywords": [],
   "author": "ManDongI",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-exec": "^4.0.0"
+  }
 }
