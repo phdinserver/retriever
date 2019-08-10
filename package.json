@@ -1,0 +1,12 @@
+{
+  "name": "retriever",
+  "version": "1.0.0",
+  "description": "PhD in Server TCP backend",
+  "main": "index.mjs",
+  "scripts": {
+
+  },
+  "keywords": [],
+  "author": "ManDongI",
+  "license": "ISC"
+}
