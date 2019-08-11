@@ -1,11 +1,9 @@
 import net from 'net';
-import ProtocolManager from './protocol/ProtocolManager.mjs';
-import WrappedBuffer from "./rmpitils/src/WrappedBuffer.mjs";
+import { process } from './handler/mainhandler.mjs';
 
 const retriever = net.createServer(client => {
-    client.setEncoding('utf-8')
-        .on('data', data => {
-            console.log(ProtocolManager.factory(data));
+    client.on('data', data => {
+            process(data, client);
         }).on('error', err => {
             console.error(`Client Error: ${err.toString()}`);
         }).on('end', () => {
@@ -21,5 +19,4 @@ retriever.on('error', err => {
     console.log('Server Close');
 }).listen(9876, 'localhost', () => {
     console.log('Server Listening');
-    new WrappedBuffer(Buffer.from('1234').slice(1));
 });

@@ -1,7 +1,7 @@
 import StructuredPacket from '../../rmpitils/src/StructuredPacket.mjs';
 
 export default class SchoolMealRequestPacket extends StructuredPacket {
-    static id = 1;
+    static id = 2;
 
     decode() {
         super.decode();

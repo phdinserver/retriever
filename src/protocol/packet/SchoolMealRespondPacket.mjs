@@ -2,10 +2,12 @@ import StructuredPacket from '../../rmpitils/src/StructuredPacket.mjs';
 
 export default class SchoolMealRespondPacket extends StructuredPacket {
     static id = 3;
+
     #mealText = '';
 
     decode() {
         super.decode();
+        this.#mealText = this.wbuf.readLString();
     }
 
     encode() {
@@ -19,5 +21,10 @@ export default class SchoolMealRespondPacket extends StructuredPacket {
 
     setMealText(str) {
         this.#mealText = str;
+        this.encode();
+    }
+
+    getMealText() {
+        return this.#mealText;
     }
 }

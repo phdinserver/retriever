@@ -11,6 +11,8 @@ export default class ProtocolManager {
     }
 
     static factory(data) {
-        return new (this.findProtocolById(data[0]))(new WrappedBuffer(data.slice(1)));
+        let packet = new (this.findProtocolById(data[0]))(new WrappedBuffer(data.subarray(1)));
+        packet.decode();
+        return packet;
     }
 }
