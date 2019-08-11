@@ -1,17 +1,13 @@
 const { task, series } = require('gulp'),
-    fs = require('fs'),
-    { promisify } = require('util'),
+    { readdir, writeFile } = require('fs').promises,
     { sep } = require('path');
 
-const readdir = promisify(fs.readdir);
-const writeFile = promisify(fs.writeFile);
-
 task('packets_create', () => {
-    return readdir('./protocol/packet/')
+    return readdir('./src/protocol/packet/')
         .catch(err => {
             console.error(`Gulp Error: ${err.toString()}`);
         }).then(names => {
-            return writeFile('./protocol/packets.mjs', names.map(e => `export * from './packet/${e.split(sep).pop()}';`).join('\n'));
+            return writeFile('./src/protocol/packets.mjs', names.map(e => `export { default as ${e.split(sep).pop().split('.')[0]} } from './packet/${e.split(sep).pop()}';`).join('\n'));
         }).catch(err => {
             console.error(`Gulp Error: ${err.toString()}`);
         });

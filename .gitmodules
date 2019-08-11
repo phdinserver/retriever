@@ -1,0 +1,3 @@
+[submodule "rmpitils"]
+	path = src/rmpitils
+	url = https://github.com/ManDongI/rmpitils.git

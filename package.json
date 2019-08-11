@@ -2,7 +2,7 @@
   "name": "retriever",
   "version": "1.0.0",
   "description": "PhD in Server TCP backend",
-  "main": "index.mjs",
+  "main": "src/index.mjs",
   "scripts": {},
   "keywords": [],
   "author": "ManDongI",
@@ -10,5 +10,13 @@
   "devDependencies": {
     "gulp": "^4.0.2",
     "gulp-exec": "^4.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phdinserver/retriever.git"
+  },
+  "bugs": {
+    "url": "https://github.com/phdinserver/retriever/issues"
+  },
+  "homepage": "https://github.com/phdinserver/retriever#readme"
 }

@@ -1,11 +1,21 @@
 export default class Packet {
-    constructor() {
+    constructor(wbuf) {
+        this.wbuf = wbuf;
         if (this.constructor === Packet)
             throw new ReferenceError('Abstract class Packet');
     }
 
-    read() {
+    decode() {
         if (this.constructor === Packet)
             throw new ReferenceError('Abstract class Packet');
+    }
+
+    encode() {
+        if (this.constructor === Packet)
+            throw new ReferenceError('Abstract class Packet');
+    }
+
+    getBuffer() {
+        return this.wbuf;
     }
 }
