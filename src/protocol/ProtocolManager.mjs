@@ -1,6 +1,6 @@
 import * as packets from './packets.mjs';
 import AutochthonousPacket from './AutochthonousPacket.mjs';
-import { WrappedBuffer } from "../rmpitils/src/rmpitils.mjs";
+import { WrappedBuffer } from '../rmpitils/src/rmpitils.mjs';
 
 export default class ProtocolManager {
     static findProtocolById(id) {

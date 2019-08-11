@@ -9,7 +9,9 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-exec": "^4.0.0"
+    "gulp-exec": "^4.0.0",
+    "gulp-mocha": "^6.0.0",
+    "mocha": "^6.2.0"
   },
   "repository": {
     "type": "git",
