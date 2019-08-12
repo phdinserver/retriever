@@ -1,6 +1,5 @@
 import * as packets from './packets.mjs';
 import AutochthonousPacket from './AutochthonousPacket.mjs';
-import { WrappedBuffer } from '../rmpitils/src/rmpitils.mjs';
 
 export default class ProtocolManager {
     static findProtocolById(id) {
@@ -11,7 +10,7 @@ export default class ProtocolManager {
     }
 
     static factory(data) {
-        let packet = new (this.findProtocolById(data[0]))(new WrappedBuffer(data.subarray(1)));
+        let packet = new (this.findProtocolById(data[0]))(data);
         packet.decode();
         return packet;
     }

@@ -1,10 +1,9 @@
 import { SchoolMealRespondPacket } from '../protocol/packets.mjs';
-import { WrappedBuffer } from '../rmpitils/src/rmpitils.mjs';
+import PacketUtils from '../protocol/PacketUtils.mjs';
 
 
 export default function handle(packet, client) {
-    let respondPacket = new SchoolMealRespondPacket(new WrappedBuffer(Buffer.from('1234')));
+    let respondPacket = PacketUtils.createPacket(SchoolMealRespondPacket);
     respondPacket.setMealText('Test');
-    console.log('a');
-    client.write(respondPacket.getRawData());
+    PacketUtils.send(respondPacket, client);
 }

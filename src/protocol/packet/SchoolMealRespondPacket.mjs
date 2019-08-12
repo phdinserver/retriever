@@ -1,4 +1,4 @@
-import StructuredPacket from '../../rmpitils/src/StructuredPacket.mjs';
+import { StructuredPacket } from '../../rmpitils/src/rmpitils.mjs';
 
 export default class SchoolMealRespondPacket extends StructuredPacket {
     static id = 3;
