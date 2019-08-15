@@ -1,3 +1,6 @@
 [submodule "rmpitils"]
 	path = src/rmpitils
 	url = https://github.com/ManDongI/rmpitils.git
+[submodule "Indolence"]
+	path = Indolence
+	url = https://github.com/phdinserver/Indolence

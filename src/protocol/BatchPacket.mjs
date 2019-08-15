@@ -23,7 +23,7 @@ export default class BatchPacket extends StructuredPacket {
     }
 
     getEstimatedSize() {
-        return 8 + this.#packetList.map(e => e.getRealSize() + 9).reduce((a, b) => a + b);
+        return 4 + this.#packetList.map(e => e.getRealSize() + 5).reduce((a, b) => a + b);
     }
 
     putPacket(packet) {

@@ -4,6 +4,7 @@ import PacketUtils from '../protocol/PacketUtils.mjs';
 
 export default function handle(packet, client) {
     let respondPacket = PacketUtils.createPacket(SchoolMealRespondPacket);
-    respondPacket.setMealText('Test');
+    respondPacket.mealText = 'Test';
+    respondPacket.encode();
     PacketUtils.send(respondPacket, client);
 }

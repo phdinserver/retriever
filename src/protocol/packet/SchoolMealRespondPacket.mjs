@@ -1,30 +1,20 @@
 import { StructuredPacket } from '../../rmpitils/src/rmpitils.mjs';
 
 export default class SchoolMealRespondPacket extends StructuredPacket {
-    static id = 3;
+  static id = 3;
+  mealText; // LString
 
-    #mealText = '';
+  decode() {
+    super.decode();
+    this.mealText = this.readLString();
+  }
 
-    decode() {
-        super.decode();
-        this.#mealText = this.wbuf.readLString();
-    }
+  encode() {
+    super.encode();
+    this.writeLString(this.mealText);
+  }
 
-    encode() {
-        super.encode();
-        this.wbuf.writeLString(this.#mealText);
-    }
-
-    getEstimatedSize() {
-        return 8 + Buffer.from(this.#mealText, 'utf8').length;
-    }
-
-    setMealText(str) {
-        this.#mealText = str;
-        this.encode();
-    }
-
-    getMealText() {
-        return this.#mealText;
-    }
+  getEstimatedSize() {
+    return Buffer.from(this.mealText, "utf8").length + 4;
+  }
 }

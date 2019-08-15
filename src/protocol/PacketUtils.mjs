@@ -11,7 +11,7 @@ export default class PacketUtils {
 
     static makeBatch(packets) {
         let batchPacket = PacketUtils.createPacket(BatchPacket);
-            batchPacket.putPacket(packets);
+        batchPacket.putPackets(packets);
         batchPacket.encode();
         return batchPacket;
     }
